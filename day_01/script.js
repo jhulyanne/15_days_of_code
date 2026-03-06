@@ -24,3 +24,20 @@ function posOrNeg(num) {
         return `${num} não é um número, tente novamente`
     }
 }
+
+function countChar(num) {
+    // tive que pesquisar
+    const characters = num.toString().length
+    return `${num} tem ${characters} caracteres`
+}
+
+function analyzeNumber(number){
+    // tive que pesquisar
+    const parity = oddOrEven(number);
+    const status = posOrNeg(number);
+    const length = countChar(number);
+
+    return `${parity} | ${status} | ${length}`
+}
+
+console.log(analyzeNumber(162))
