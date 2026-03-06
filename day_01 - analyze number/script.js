@@ -26,13 +26,11 @@ function posOrNeg(num) {
 }
 
 function countChar(num) {
-    // tive que pesquisar
     const characters = num.toString().length
     return `${num} tem ${characters} caracteres`
 }
 
 function analyzeNumber(number){
-    // tive que pesquisar
     const parity = oddOrEven(number);
     const status = posOrNeg(number);
     const length = countChar(number);
