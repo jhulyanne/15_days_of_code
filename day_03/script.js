@@ -11,20 +11,26 @@ function numOfWords(str) {
     return words.length;
 }
 
-function longestWord(str){
-    const words = str.split(' ');
-
+function longestWord(str) {
+    const words = str.split(' ').filter(word => word.length > 0);
+    if (words.length === 0) return '';
+    return words.reduce((maior, atual) =>
+        atual.length > maior.length ? atual : maior
+    );
 }
 
-function numOfLetters(str){
-    return str.length
-    // vai contar os espaços junto
+function numOfLetters(str) {
+    return str.replace(/\s/g, '').length;
 }
 
 function analyzeString(string) {
-    numOfWords(string);
-    longestWord(string);
-    numOfLetters(string);
+    const words = numOfWords(string);
+    const longest = longestWord(string);
+    const letters = numOfLetters(string);
+
+    return `    A frase tem ${words} palavras
+    A palavra mais longa é "${longest}"
+    A frase tem ${letters} letras.`
 }
 
-console.log(numOfLetters("aaaa aaaa aaaa aaaaa"));
+console.log(analyzeString("Frase de exemplo para a função"));
