@@ -5,5 +5,5 @@ var finalList = document.getElementById("finalList");
 
 function itemsList (){
     newList.split(', ')
-    return 
+    return `${finalList}` // dentro de uma ol
 } 
